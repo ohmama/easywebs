@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyWeb — Affordable Websites for NZ Small Businesses</title>
+<meta name="description" content="Simple, affordable websites for NZ small businesses. Starting from $800. No hidden costs, no ongoing fees. Get a quote within 1 day.">
+<link rel="canonical" href="https://easywebs.co.nz/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"EasyWebs","url":"https://easywebs.co.nz","email":"hello@easywebs.co.nz","founder":{"@type":"Person","name":"Yang"},"areaServed":{"@type":"Country","name":"New Zealand"},"knowsLanguage":["en","zh"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500&display=swap" rel="stylesheet">
+<style>
+
+/* ── TOKENS ── */
+:root {
+  --bg:        #ffffff;
+  --surface:   #f8f9fa;
+  --surface2:  #f0f2f5;
+  --ink:       #111827;
+  --ink2:      #374151;
+  --muted:     #6b7280;
+  --border:    #e5e7eb;
+  --blue:      #2563eb;
+  --blue-dk:   #1d4ed8;
+  --blue-lt:   #eff6ff;
+  --green:     #16a34a;
+  --green-lt:  #f0fdf4;
+  --r:         10px;
+  --sh:        0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --sh-md:     0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  --sh-lg:     0 10px 36px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.05);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: 62px;
+  display: flex; align-items: center;
+  padding: 0 1.5rem;
+}
+.nav-inner {
+  max-width: 1080px; margin: 0 auto; width: 100%;
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: .55rem;
+  font-weight: 700; font-size: 1.05rem;
+  color: var(--ink); flex-shrink: 0;
+}
+.nav-logo-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-icon svg { width: 16px; height: 16px; color: #fff; }
+.nav-links {
+  display: flex; align-items: center; gap: .15rem;
+  list-style: none; margin-left: auto;
+}
+.nav-links a {
+  font-size: .85rem; font-weight: 500; color: var(--muted);
+  padding: .4rem .75rem; border-radius: 6px;
+  transition: color .15s, background .15s;
+}
+.nav-links a:hover { color: var(--ink); background: var(--surface); }
+.nav-cta {
+  background: var(--blue) !important;
+  color: #fff !important; font-weight: 600 !important;
+  padding: .45rem 1.1rem !important;
+  border-radius: 7px; margin-left: .5rem;
+  transition: background .15s !important;
+}
+.nav-cta:hover { background: var(--blue-dk) !important; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(180deg, #f8faff 0%, #fff 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 1.5rem 4.5rem;
+}
+.hero-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 400px;
+  gap: 4rem; align-items: center;
+}
+.hero-left {}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--green-lt);
+  color: var(--green); font-size: .75rem; font-weight: 600;
+  border: 1px solid rgba(22,163,74,.2);
+  padding: .3rem .85rem; border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2.5s ease infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; } 50% { opacity: .35; }
+}
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700; line-height: 1.18;
+  letter-spacing: -.025em; color: var(--ink);
+  margin-bottom: 1.1rem;
+}
+.hero h1 span { color: var(--blue); }
+.hero-sub {
+  font-size: 1.1rem; line-height: 1.72;
+  color: var(--ink2); max-width: 460px;
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: .75rem;
+  flex-wrap: wrap; margin-bottom: 2rem;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--blue); color: #fff;
+  font-size: .95rem; font-weight: 600;
+  padding: .75rem 1.6rem; border-radius: var(--r);
+  box-shadow: 0 2px 8px rgba(37,99,235,.3);
+  transition: background .15s, transform .15s, box-shadow .15s;
+}
+.btn-primary:hover {
+  background: var(--blue-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37,99,235,.35);
+}
+.btn-outline {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--bg); color: var(--ink2);
+  font-size: .95rem; font-weight: 500;
+  padding: .73rem 1.4rem; border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  transition: border-color .15s, color .15s, background .15s;
+}
+.btn-outline:hover {
+  border-color: var(--ink2); color: var(--ink);
+  background: var(--surface);
+}
+.hero-trust {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+}
+.ht-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .82rem; color: var(--muted);
+}
+.ht-item svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; }
+
+/* pricing card in hero */
+.hero-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+}
+.hc-header {
+  background: var(--ink);
+  padding: 1.4rem 1.6rem;
+}
+.hc-header-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: .6rem;
+}
+.hc-label {
+  font-size: .68rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+}
+.hc-badge {
+  font-size: .65rem; font-weight: 600;
+  background: var(--green); color: #fff;
+  padding: .2rem .6rem; border-radius: 100px;
+}
+.hc-price {
+  display: flex; align-items: baseline; gap: .35rem;
+}
+.hc-price-big {
+  font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.hc-price-suffix { font-size: .82rem; color: rgba(255,255,255,.4); }
+.hc-price-note { font-size: .78rem; color: rgba(255,255,255,.35); margin-top: .25rem; }
+.hc-body { padding: 1.4rem 1.6rem; }
+.hc-item {
+  display: flex; align-items: flex-start; gap: .55rem;
+  padding: .5rem 0; border-bottom: 1px solid var(--border);
+  font-size: .84rem; color: var(--ink2); line-height: 1.4;
+}
+.hc-item:last-of-type { border-bottom: none; }
+.hc-check {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--green-lt); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: .05rem;
+}
+.hc-check svg { width: 9px; height: 9px; color: var(--green); }
+.hc-footer { padding: 0 1.6rem 1.4rem; }
+.hc-cta {
+  display: block; text-align: center; width: 100%;
+  background: var(--blue); color: #fff;
+  font-size: .9rem; font-weight: 600;
+  padding: .75rem; border-radius: 8px;
+  transition: background .15s;
+}
+.hc-cta:hover { background: var(--blue-dk); }
+.hc-no-hidden {
+  text-align: center; margin-top: .75rem;
+  font-size: .75rem; color: var(--muted);
+  display: flex; align-items: center; justify-content: center; gap: .3rem;
+}
+.hc-no-hidden svg { width: 12px; height: 12px; }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}
+.trust-bar-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; align-items: center;
+  gap: 0; flex-wrap: wrap;
+}
+.tb-item {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .8rem; color: var(--muted);
+  padding: .35rem 1.5rem .35rem 0;
+}
+.tb-item:not(:last-child) {
+  margin-right: 1.5rem;
+  border-right: 1px solid var(--border);
+  padding-right: 1.5rem;
+}
+.tb-item svg { width: 14px; height: 14px; color: var(--blue); flex-shrink: 0; }
+
+/* ── SECTION SHELL ── */
+.section { padding: 5rem 1.5rem; }
+.section.grey { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.wrap { max-width: 1080px; margin: 0 auto; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: .75rem;
+}
+.section-h {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700; line-height: 1.22;
+  letter-spacing: -.02em; color: var(--ink);
+  margin-bottom: .65rem;
+}
+.section-sub {
+  font-size: .97rem; line-height: 1.7;
+  color: var(--muted); max-width: 500px;
+}
+
+/* ── SERVICES ── */
+.svc-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: end;
+  margin-bottom: 3rem;
+}
+.svc-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.svc-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 1.6rem;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.svc-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.07), var(--sh-md);
+  transform: translateY(-2px);
+}
+.svc-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: var(--blue-lt);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.svc-icon svg { width: 20px; height: 20px; color: var(--blue); }
+.svc-card h3 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: .4rem; }
+.svc-card p { font-size: .87rem; line-height: 1.68; color: var(--muted); margin-bottom: 1.1rem; }
+.svc-result {
+  background: var(--green-lt);
+  border: 1px solid rgba(22,163,74,.15);
+  border-radius: 7px; padding: .5rem .75rem;
+  font-size: .78rem; font-weight: 500;
+  color: var(--green);
+  display: flex; align-items: center; gap: .35rem;
+}
+.svc-result svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* ── PROCESS ── */
+.proc-layout {
+  display: grid; grid-template-columns: 380px 1fr;
+  gap: 5rem; align-items: start;
+}
+.proc-steps { display: flex; flex-direction: column; }
+.proc-step {
+  display: flex; gap: 1.25rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--border);
+}
+.proc-step:last-child { border-bottom: 1px solid var(--border); }
+.proc-num-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.proc-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--blue-lt); border: 1.5px solid rgba(37,99,235,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 700; color: var(--blue);
+  flex-shrink: 0;
+}
+.proc-connector {
+  width: 1.5px; flex: 1; min-height: 20px;
+  background: var(--border); margin: 5px 0;
+}
+.proc-step:last-child .proc-connector { display: none; }
+.proc-body { padding-top: .3rem; }
+.proc-body h3 { font-size: .97rem; font-weight: 600; color: var(--ink); margin-bottom: .3rem; }
+.proc-body p { font-size: .86rem; line-height: 1.68; color: var(--muted); }
+.proc-time {
+  display: inline-block;
+  font-size: .7rem; font-weight: 600; color: var(--blue);
+  background: var(--blue-lt);
+  border-radius: 4px; padding: .15rem .45rem;
+  margin-top: .4rem;
+}
+
+/* ── PRICING ── */
+.pricing-intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: end; margin-bottom: 2.5rem;
+}
+/* top banner */
+.price-banner {
+  background: var(--ink); border-radius: 14px;
+  padding: 2.2rem 2rem;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.pb-l {}
+.pb-eyebrow {
+  font-size: .68rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+  margin-bottom: .4rem;
+}
+.pb-h {
+  font-size: 1.55rem; font-weight: 700; color: #fff;
+  line-height: 1.3; margin-bottom: .4rem;
+}
+.pb-sub { font-size: .87rem; color: rgba(255,255,255,.38); line-height: 1.6; }
+.pb-r { text-align: center; flex-shrink: 0; }
+.pb-price { font-size: 3.2rem; font-weight: 700; color: #fff; line-height: 1; }
+.pb-label {
+  font-size: .68rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+  margin-top: .2rem;
+}
+.pb-cta {
+  display: inline-block; margin-top: .9rem;
+  background: var(--blue); color: #fff;
+  font-size: .85rem; font-weight: 600;
+  padding: .6rem 1.4rem; border-radius: 7px;
+  transition: background .15s;
+}
+.pb-cta:hover { background: var(--blue-dk); }
+
+.price-cards {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+}
+.price-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 1.4rem;
+  position: relative;
+  transition: border-color .2s, box-shadow .2s;
+}
+.price-card:hover { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.07); }
+.pc-tier {
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: .5rem;
+}
+.pc-price {
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--ink); margin-bottom: .1rem;
+  display: flex; align-items: baseline; gap: .3rem;
+}
+.pc-price span { font-size: .82rem; font-weight: 400; color: var(--muted); }
+.pc-who {
+  font-size: .78rem; color: var(--muted);
+  margin-bottom: .9rem; line-height: 1.5;
+}
+.pc-items { list-style: none; display: flex; flex-direction: column; gap: .35rem; }
+.pc-item {
+  display: flex; align-items: flex-start; gap: .4rem;
+  font-size: .8rem; color: var(--ink2); line-height: 1.4;
+}
+.pc-item svg { width: 13px; height: 13px; color: var(--green); flex-shrink: 0; margin-top: .1rem; }
+.price-reassure {
+  margin-top: 1.25rem;
+  background: var(--blue-lt);
+  border: 1px solid rgba(37,99,235,.15);
+  border-radius: 10px; padding: 1.1rem 1.3rem;
+  display: flex; align-items: flex-start; gap: .75rem;
+  font-size: .85rem; color: var(--ink2); line-height: 1.65;
+}
+.pr-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+
+/* ── ABOUT ── */
+.about-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.about-text p {
+  font-size: .95rem; line-height: 1.8;
+  color: var(--ink2); margin-bottom: .9rem;
+}
+.about-text p strong { color: var(--ink); font-weight: 600; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border);
+  border: 1.5px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+}
+.ag-cell {
+  background: var(--bg); padding: 1.25rem;
+}
+.ag-key {
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .3rem;
+}
+.ag-val {
+  font-size: .95rem; font-weight: 600; color: var(--ink); line-height: 1.4;
+}
+.ag-val-sm { font-size: .87rem; font-weight: 400; color: var(--ink2); }
+.ag-avail { display: flex; align-items: center; gap: .4rem; }
+.ag-pip { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
+
+/* ── CONTACT ── */
+.contact-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+.contact-l {}
+.contact-facts { margin-top: 2rem; display: flex; flex-direction: column; }
+.cf-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: .9rem 0;
+  border-top: 1px solid var(--border);
+}
+.cf-row:last-child { border-bottom: 1px solid var(--border); }
+.cf-k { font-size: .78rem; font-weight: 600; color: var(--muted); }
+.cf-v { font-size: .88rem; color: var(--ink); }
+.cf-v a { color: var(--blue); }
+.cf-v a:hover { text-decoration: underline; }
+.contact-note {
+  margin-top: 1.5rem;
+  background: var(--green-lt); border: 1px solid rgba(22,163,74,.18);
+  border-radius: 10px; padding: 1.1rem 1.2rem;
+  font-size: .85rem; line-height: 1.65; color: var(--ink2);
+}
+.contact-note strong { color: var(--ink); font-weight: 600; }
+
+/* form */
+.contact-form {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 1.8rem;
+  box-shadow: var(--sh);
+}
+.form-h { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 1.4rem; }
+.f2 { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+.fg { margin-bottom: .85rem; }
+.fg label {
+  display: block; font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .35rem;
+}
+.fg input, .fg select, .fg textarea {
+  width: 100%; background: var(--bg); color: var(--ink);
+  border: 1.5px solid var(--border); border-radius: 8px;
+  padding: .6rem .85rem;
+  font-family: 'Inter', sans-serif; font-size: .9rem;
+  outline: none; transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+}
+.fg input::placeholder, .fg textarea::placeholder { color: #c0c8d0; }
+.fg select option { background: var(--bg); }
+.fg textarea { resize: none; height: 90px; }
+.f-submit {
+  width: 100%; margin-top: .4rem;
+  background: var(--blue); color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: .92rem; font-weight: 700;
+  border: none; border-radius: 8px; padding: .82rem;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: .45rem;
+  transition: background .15s, transform .15s;
+}
+.f-submit:hover { background: var(--blue-dk); transform: translateY(-1px); }
+.f-submit:disabled { opacity: .5; transform: none; cursor: not-allowed; }
+.f-no-bs {
+  text-align: center; margin-top: .65rem;
+  font-size: .75rem; color: var(--muted);
+  display: flex; align-items: center; justify-content: center; gap: .3rem;
+}
+.f-no-bs svg { width: 12px; height: 12px; color: var(--green); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); padding: 1.8rem 1.5rem;
+}
+.footer-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: .75rem;
+}
+.footer-logo { font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.3); }
+.footer-links { display: flex; gap: 1.25rem; list-style: none; }
+.footer-links a { font-size: .8rem; color: rgba(255,255,255,.3); transition: color .15s; }
+.footer-links a:hover { color: rgba(255,255,255,.65); }
+.footer-copy { font-size: .75rem; color: rgba(255,255,255,.2); }
+
+/* ── REVEAL ── */
+.rv { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  nav { padding: 0 1rem; }
+  .hero { padding: 3rem 1rem 3rem; }
+  .hero-inner, .svc-header, .pricing-intro, .about-layout, .contact-layout, .proc-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .svc-grid, .price-cards { grid-template-columns: 1fr; }
+  .price-banner { grid-template-columns: 1fr; }
+  .pb-r { text-align: left; }
+  .section { padding: 3.5rem 1rem; }
+  .trust-bar { padding: .8rem 1rem; }
+  .trust-bar-inner { gap: .5rem; }
+  .tb-item:not(:last-child) { border-right: none; margin-right: 0; padding-right: 0; }
+  footer { padding: 1.5rem 1rem; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .f2 { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 2C4.7 2 2 4.7 2 8s2.7 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="8" r="1.8" fill="currentColor"/></svg>
+      </div>
+      EasyWebs
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">Process</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get a quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge rv">
+        <span class="badge-dot"></span>
+        Currently taking new projects
+      </div>
+      <h1 class="rv" style="transition-delay:.06s">
+        Simple, affordable websites for your <span>NZ business.</span>
+      </h1>
+      <p class="hero-sub rv" style="transition-delay:.1s">
+        Get a clean, professional website without spending thousands. Fast turnaround, clear pricing, no hidden costs.
+      </p>
+      <div class="hero-actions rv" style="transition-delay:.15s">
+        <a href="#pricing" class="btn-primary">
+          See pricing
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-outline">Get a free quote</a>
+      </div>
+      <div class="hero-trust rv" style="transition-delay:.2s">
+        <div class="ht-item">
+          <svg viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Affordable pricing
+        </div>
+        <div class="ht-item">
+          <svg viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Simple process
+        </div>
+        <div class="ht-item">
+          <svg viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Fast turnaround
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card rv" style="transition-delay:.1s">
+      <div class="hc-header">
+        <div class="hc-header-top">
+          <span class="hc-label">Starting from</span>
+          <span class="hc-badge">No hidden fees</span>
+        </div>
+        <div class="hc-price">
+          <span class="hc-price-big">$800</span>
+          <span class="hc-price-suffix">NZD</span>
+        </div>
+        <p class="hc-price-note">Most projects $800–$1,500 · Quote within 1 day</p>
+      </div>
+      <div class="hc-body">
+        <div class="hc-item">
+          <div class="hc-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.8 7L7.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Mobile-friendly &amp; fast loading
+        </div>
+        <div class="hc-item">
+          <div class="hc-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.8 7L7.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Shows up on Google (SEO included)
+        </div>
+        <div class="hc-item">
+          <div class="hc-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.8 7L7.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Easy for you to update yourself
+        </div>
+        <div class="hc-item">
+          <div class="hc-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.8 7L7.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Done in 2–4 weeks
+        </div>
+        <div class="hc-item">
+          <div class="hc-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.8 7L7.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          No ongoing monthly fees
+        </div>
+      </div>
+      <div class="hc-footer">
+        <a href="#contact" class="hc-cta">Get a free quote →</a>
+        <p class="hc-no-hidden">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1a5 5 0 100 10A5 5 0 006 1zm0 4v3M6 4v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          No obligation · No pushy sales
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="tb-item">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7L7 1z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      5+ years experience
+    </div>
+    <div class="tb-item">
+      <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 7.5L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      No hidden costs
+    </div>
+    <div class="tb-item">
+      <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 7.5L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Quote within 1 day
+    </div>
+    <div class="tb-item">
+      <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 7.5L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Auckland-based · NZ-wide
+    </div>
+    <div class="tb-item">
+      <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 7.5L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      English &amp; Japanese &amp; Mandarin
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="svc-header">
+      <div>
+        <p class="section-tag rv">What you get</p>
+        <h2 class="section-h rv" style="transition-delay:.05s">Everything you need<br>to get online fast.</h2>
+      </div>
+      <p class="section-sub rv" style="transition-delay:.1s">No technical jargon. No unnecessary complexity. Just a website that helps your business get more customers.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card rv">
+        <div class="svc-icon">
+          <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h16" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="6" r=".6" fill="currentColor"/><circle cx="7.2" cy="6" r=".6" fill="currentColor"/></svg>
+        </div>
+        <h3>Business Website</h3>
+        <p>A clean, professional site that makes customers trust you and get in touch. Looks great on phones. Shows up on Google. Simple to update yourself.</p>
+        <div class="svc-result">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Helps you get more enquiries
+        </div>
+      </div>
+      <div class="svc-card rv" style="transition-delay:.07s">
+        <div class="svc-icon">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M3 5.5h14l-1.4 7.5H4.4L3 5.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="8" cy="16.5" r="1" fill="currentColor"/><circle cx="13" cy="16.5" r="1" fill="currentColor"/><path d="M1 3h2l.5 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Online Store</h3>
+        <p>Sell your products online with a simple, secure checkout. Easy to manage your stock yourself. Set up properly so customers can actually buy from you.</p>
+        <div class="svc-result">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Helps you sell while you sleep
+        </div>
+      </div>
+      <div class="svc-card rv" style="transition-delay:.14s">
+        <div class="svc-icon">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M3 15l4.5-4.5 3 3L16 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Fix My Existing Site</h3>
+        <p>Old site slow, outdated, or not showing up on Google? I'll fix what's broken and give you something you're actually proud to send to customers.</p>
+        <div class="svc-result">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Turns a problem into an asset
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section grey" id="how-it-works">
+  <div class="wrap">
+    <div class="proc-layout">
+      <div>
+        <p class="section-tag rv">How it works</p>
+        <h2 class="section-h rv" style="transition-delay:.05s">Simple process.<br>No confusion.</h2>
+        <p class="section-sub rv" style="transition-delay:.1s; margin-top:.6rem">Four steps from first message to a live website. You don't need to know anything technical — I handle all of that.</p>
+      </div>
+      <div class="proc-steps">
+        <div class="proc-step rv">
+          <div class="proc-num-col">
+            <div class="proc-num">1</div>
+            <div class="proc-connector"></div>
+          </div>
+          <div class="proc-body">
+            <h3>You tell me what you need</h3>
+            <p>Fill in the form or send me an email. Tell me about your business — what you do, who your customers are. No technical knowledge required.</p>
+            <span class="proc-time">Takes 5 minutes</span>
+          </div>
+        </div>
+        <div class="proc-step rv" style="transition-delay:.07s">
+          <div class="proc-num-col">
+            <div class="proc-num">2</div>
+            <div class="proc-connector"></div>
+          </div>
+          <div class="proc-body">
+            <h3>I send you a clear quote</h3>
+            <p>You get an exact price within 1 business day. No vague ranges, no hidden extras. If it doesn't work for you, no problem.</p>
+            <span class="proc-time">Within 1 day</span>
+          </div>
+        </div>
+        <div class="proc-step rv" style="transition-delay:.14s">
+          <div class="proc-num-col">
+            <div class="proc-num">3</div>
+            <div class="proc-connector"></div>
+          </div>
+          <div class="proc-body">
+            <h3>I build it, you approve it</h3>
+            <p>I design and build your site and keep you updated. You see it before it goes live and we tweak it until you're happy.</p>
+            <span class="proc-time">2–4 weeks</span>
+          </div>
+        </div>
+        <div class="proc-step rv" style="transition-delay:.21s">
+          <div class="proc-num-col">
+            <div class="proc-num">4</div>
+          </div>
+          <div class="proc-body">
+            <h3>Your site goes live</h3>
+            <p>I launch it, walk you through how to use it, and make sure you feel confident managing it yourself. I'm available afterwards if you need anything.</p>
+            <span class="proc-time">You're online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="pricing-intro">
+      <div>
+        <p class="section-tag rv">Pricing</p>
+        <h2 class="section-h rv" style="transition-delay:.05s">Clear prices.<br>No surprises.</h2>
+      </div>
+      <p class="section-sub rv" style="transition-delay:.1s">
+        Most projects cost between <strong>$800 and $1,500</strong>. I'll give you an exact quote within 1 day — no obligation, no pushy sales call.
+      </p>
+    </div>
+
+    <div class="price-banner rv">
+      <div class="pb-l">
+        <p class="pb-eyebrow">Good news</p>
+        <p class="pb-sub">No hidden costs. You get an exact price upfront — what I quote is what you pay.</p>
+      </div>
+      <div class="pb-r">
+        <div class="pb-price">$800</div>
+        <div class="pb-label">Starting from</div>
+        <a href="#contact" class="pb-cta">Get my exact price →</a>
+      </div>
+    </div>
+
+    <div class="price-cards">
+      <div class="price-card rv">
+        <p class="pc-tier">Starter</p>
+        <div class="pc-price">$800 <span>– $1,000</span></div>
+        <p class="pc-who">Perfect for: service businesses, tradespeople, restaurants getting their first website</p>
+        <ul class="pc-items">
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 5 pages</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Contact form</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mobile-friendly</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic SEO setup</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Maps integration</li>
+        </ul>
+      </div>
+      <div class="price-card rv" style="transition-delay:.07s">
+        <p class="pc-tier">Business</p>
+        <div class="pc-price">$1,000 <span>– $1,500</span></div>
+        <p class="pc-who">Perfect for: established businesses wanting a more complete website with more pages</p>
+        <ul class="pc-items">
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 10 pages</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Photo gallery</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog section</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Full SEO setup</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Starter</li>
+        </ul>
+      </div>
+      <div class="price-card rv" style="transition-delay:.14s">
+        <p class="pc-tier">Online Store</p>
+        <div class="pc-price">$1,500 <span>– $2,500</span></div>
+        <p class="pc-who">Perfect for: businesses selling products online who need a proper shop</p>
+        <ul class="pc-items">
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Shopify or WooCommerce</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Product catalogue setup</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Secure checkout</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>NZ payment setup</li>
+          <li class="pc-item"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5 9.5L11 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Training included</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-reassure rv" style="transition-delay:.1s">
+      <span class="pr-icon">🔒</span>
+      <div>
+        <strong>No hidden costs. No ongoing fees. No obligation.</strong> The price I quote is the price you pay. If your project is simpler than the ranges above, you'll pay less. I'll always be upfront about what things cost before you commit to anything.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section grey" id="about">
+  <div class="wrap">
+    <div class="about-layout">
+      <div>
+        <p class="section-tag rv">About</p>
+        <h2 class="section-h rv" style="transition-delay:.05s">You talk to me.<br>I build your site.</h2>
+        <div class="about-text">
+          <p class="rv" style="transition-delay:.1s">I'm Yang, based in Auckland. I've been building websites for <strong>over 5 years</strong>. I started EasyWebs because I kept seeing small businesses either overpaying agencies or getting stuck with DIY tools that didn't work properly.</p>
+          <p class="rv" style="transition-delay:.15s">When you work with me, you deal directly with the person doing the work. No middlemen, no account managers passing messages along. Just a straightforward service at a fair price.</p>
+          <p class="rv" style="transition-delay:.2s">I speak English, Japanese and Mandarin — whichever is easier for you.</p>
+        </div>
+      </div>
+      <div class="about-grid rv" style="transition-delay:.1s">
+        <div class="ag-cell">
+          <p class="ag-key">Experience</p>
+          <p class="ag-val">5+ years</p>
+        </div>
+        <div class="ag-cell">
+          <p class="ag-key">Location</p>
+          <p class="ag-val ag-val-sm">Auckland · NZ-wide</p>
+        </div>
+        <div class="ag-cell">
+          <p class="ag-key">Turnaround</p>
+          <p class="ag-val ag-val-sm">2–4 weeks</p>
+        </div>
+        <div class="ag-cell">
+          <p class="ag-key">Quote time</p>
+          <p class="ag-val ag-val-sm">Within 1 day</p>
+        </div>
+        <div class="ag-cell">
+          <p class="ag-key">Languages</p>
+          <p class="ag-val ag-val-sm">English · 日本語 · 中文</p>
+        </div>
+        <div class="ag-cell">
+          <p class="ag-key">Availability</p>
+          <div class="ag-avail">
+            <div class="ag-pip"></div>
+            <p class="ag-val ag-val-sm">Open for work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-layout">
+      <div class="contact-l">
+        <p class="section-tag rv">Get started</p>
+        <h2 class="section-h rv" style="transition-delay:.05s">Get a free quote.<br>No commitment.</h2>
+        <p class="section-sub rv" style="transition-delay:.1s; margin-top:.6rem">Tell me what you need and I'll send you a clear, exact price within 1 business day. No pushy follow-ups, no obligation to proceed.</p>
+        <div class="contact-facts rv" style="transition-delay:.15s">
+          <div class="cf-row">
+            <span class="cf-k">Email</span>
+            <span class="cf-v"><a href="mailto:hello@easywebs.co.nz">hello@easywebs.co.nz</a></span>
+          </div>
+          <div class="cf-row">
+            <span class="cf-k">Location</span>
+            <span class="cf-v">Auckland, NZ</span>
+          </div>
+          <div class="cf-row">
+            <span class="cf-k">Starting from</span>
+            <span class="cf-v">$800 NZD</span>
+          </div>
+          <div class="cf-row">
+            <span class="cf-k">Quote</span>
+            <span class="cf-v">Within 1 business day</span>
+          </div>
+        </div>
+        <div class="contact-note rv" style="transition-delay:.2s">
+          <strong>Not sure what you need?</strong> That's completely fine — just tell me a bit about your business and I'll suggest what makes sense. No technical knowledge required on your end.
+        </div>
+      </div>
+
+      <div class="contact-form rv" style="transition-delay:.1s">
+        <p class="form-h">Tell me what you need</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="the-form">
+          <p style="display:none"><label>Leave empty: <input name="bot-field"></label></p>
+          <input type="hidden" name="form-name" value="contact">
+          <div class="f2">
+            <div class="fg">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" placeholder="e.g. Sarah" required>
+            </div>
+            <div class="fg">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="f-biz">Your business</label>
+            <input id="f-biz" name="business" type="text" placeholder="Business name and what you do">
+          </div>
+          <div class="fg">
+            <label for="f-svc">What do you need?</label>
+            <select id="f-svc" name="service">
+              <option value="">Select...</option>
+              <option>A new website</option>
+              <option>An online store</option>
+              <option>Fix my existing site</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-msg">Anything else? (keep it simple)</label>
+            <textarea id="f-msg" name="message" placeholder="E.g. I run a plumbing business in Wellington and need a simple website with a contact form..."></textarea>
+          </div>
+          <button type="submit" class="f-submit" id="f-btn">
+            <span id="f-btxt">Get a free quote</span>
+            <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="f-no-bs">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No hidden costs · No obligation · Reply within 1 day
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">EasyWebs</span>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">Process</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Yang · Auckland, NZ · hello@easywebs.co.nz</span>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+const form = document.getElementById('the-form');
+const btn  = document.getElementById('f-btn');
+const btxt = document.getElementById('f-btxt');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  btxt.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const r = await fetch('https://easywebs.co.nz/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    });
+    if (r.ok) {
+      btxt.textContent = 'Sent! I\'ll reply within 1 day ✓';
+      form.reset();
+      setTimeout(() => { btxt.textContent = 'Get a free quote'; btn.disabled = false; }, 7000);
+    } else throw 0;
+  } catch {
+    btxt.textContent = 'Error — email me directly';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
