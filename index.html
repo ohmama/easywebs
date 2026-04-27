@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyWeb — Affordable Websites for NZ Small Businesses</title>
-<meta name="description" content="Simple, affordable websites for NZ small businesses. Starting from $800. No hidden costs, no ongoing fees. Get a quote within 1 day.">
+<title>EasyWeb NZ — Affordable Website Design for NZ Small Businesses</title>
+<meta name="description" content="Affordable website design for NZ small businesses. Based in Auckland, serving clients nationwide. Starting from $800. No hidden costs, no ongoing fees. Free quote within 1 day.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'><path d='M8 2C4.7 2 2 4.7 2 8s2.7 6 6 6' stroke='%232563eb' stroke-width='1.6' stroke-linecap='round'/><circle cx='8' cy='8' r='1.8' fill='%232563eb'/></svg>">
 <link rel="canonical" href="https://easywebs.co.nz/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"EasyWebs","url":"https://easywebs.co.nz","email":"hello@easywebs.co.nz","founder":{"@type":"Person","name":"Yang"},"areaServed":{"@type":"Country","name":"New Zealand"},"knowsLanguage":["en","zh"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -964,9 +965,9 @@ footer {
 
       <div class="contact-form rv" style="transition-delay:.1s">
         <p class="form-h">Tell me what you need</p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="the-form">
-          <p style="display:none"><label>Leave empty: <input name="bot-field"></label></p>
-          <input type="hidden" name="form-name" value="contact">
+        <form action="https://formspree.io/f/xyklalzv" method="POST" id="the-form">
+          <!-- <p style="display:none"><label>Leave empty: <input name="bot-field"></label></p>
+          <input type="hidden" name="form-name" value="contact"> -->
           <div class="f2">
             <div class="fg">
               <label for="f-name">Your name</label>
@@ -1035,10 +1036,10 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
   btxt.textContent = 'Sending…'; btn.disabled = true;
   try {
-    const r = await fetch('https://easywebs.co.nz/', {
+    const r = await fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
     });
     if (r.ok) {
       btxt.textContent = 'Sent! I\'ll reply within 1 day ✓';
